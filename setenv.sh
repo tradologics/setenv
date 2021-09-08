@@ -28,6 +28,7 @@ if [ "$POSTFIX" == "---clear" ]; then
     exit 0;
 fi
 
+$ENV_FILE=$ENV_FILE$POSTFIX
 
 curl -s -o $TIMESTAMP \
     -H "Authorization: token $ENV_TOKEN" \
