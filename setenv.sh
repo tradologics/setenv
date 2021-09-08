@@ -28,8 +28,6 @@ if [ "$POSTFIX" == "---clear" ]; then
     exit 0;
 fi
 
-$ENV_FILE=$ENV_FILE$POSTFIX
-
 curl -s -o $TIMESTAMP \
     -H "Authorization: token $ENV_TOKEN" \
     -H 'Accept: application/vnd.github.v3.raw' \
@@ -37,7 +35,7 @@ curl -s -o $TIMESTAMP \
 
 OK=$(cat $TIMESTAMP | grep '"message": "Not Found",')
 if [ "$OK" ]; then
-    echo "FAILED! Secret '$ENV_FILE' not found."
+    echo "FAILED! Secret '$ENV_FILE$POSTFIX' not found."
     rm $TIMESTAMP
     exit 0;
 fi
