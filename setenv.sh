@@ -15,13 +15,19 @@ if [ -z "$1" ]; then
     POSTFIX=""
 fi
 
-
 ENV_FILE=$(git config --get remote.origin.url | sed 's/.*github\.com\///' | sed 's/.*\://' | sed 's/\.git.*//')
 if [ -z "$ENV_FILE" ]; then
     echo "FAILED! Pass secrets path or run from within a repository."
     exit 0
 fi
 ENV_DIR=$(git rev-parse --show-toplevel)
+
+
+if [ "$POSTFIX" == "-clear" ]; then
+    rm $ENV_DIR/.env
+    exit 0;
+fi
+
 
 curl -s -o $TIMESTAMP \
     -H "Authorization: token $ENV_TOKEN" \
