@@ -7,12 +7,12 @@ Manage `.env` file secrets for various GitHub projects.
 
 You'll need an access token as described in this [GitHub Help article](https://help.github.com/articles/creating-an-access-token-for-command-line-use).
 
-**1.** Download `secrets` (bash file) and place it in `/usr/local/bin/` as an executable file:
+**1.** Download `secrets.sh` (bash file) and place it in `/usr/local/bin/secrets` as an executable file:
 
 ```bash
 $ cd <FILE-LOCATION>
-$ chmod +x ./secrets
-$ mv ./secrets /usr/local/bin/
+$ chmod +x ./secrets.sh
+$ mv ./secrets.sh /usr/local/bin/secrets
 ```
 
 2. Edit `.bashrc` to include your secrets repository (make it private!) and your token:
