@@ -3,7 +3,7 @@
 
 Manage `.env` files for various GitHub projects.
 
-### 1. Setup:
+### 1. Setup
 
 You'll need an access token as described in this [GitHub Help article](https://help.github.com/articles/creating-an-access-token-for-command-line-use).
 
@@ -63,5 +63,13 @@ $ setenv stage && npm start
 ```
 
 Etc.
+
+### 5. Clear
+
+To clear the working `.env` file, run:
+
+```bash
+$ setenv --clear
+```
 
 ### Enjoy!
