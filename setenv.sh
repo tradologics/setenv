@@ -23,7 +23,7 @@ fi
 ENV_DIR=$(git rev-parse --show-toplevel)
 
 
-if [ "$POSTFIX" == "-clear" ]; then
+if [ "$POSTFIX" == "---clear" ]; then
     rm $ENV_DIR/.env
     exit 0;
 fi
